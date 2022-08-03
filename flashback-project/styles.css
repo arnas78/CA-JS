@@ -2,6 +2,7 @@ body {
   background: peachpuff;
   max-width: 1170px;
   margin: 0 auto;
+  font-family: monospace;
 }
 
 /* 
@@ -24,6 +25,9 @@ body {
 */
 
 .btn {
+  display: block;
+  width: 250px;
+  margin-top: 2rem;
   min-width: 60px;
   padding: 0.5rem;
   font-size: 1rem;
@@ -33,9 +37,12 @@ body {
 }
 
 .btn-clear {
-  display: block;
-  width: 325px;
-  margin-top: 2rem;
+  background: orangered;
+  color: white;
+}
+
+.btn:hover {
+  cursor: pointer;
 }
 
 /* 
@@ -47,9 +54,9 @@ body {
 .answer {
   font-size: 2rem;
   margin-top: 2rem;
-  width: 290px;
-  height: 230px;
-  padding: 2rem 0 2rem 2rem;
+  min-width: 220px;
+  min-height: 295px;
+  padding: 1rem 0 0 1rem;
   background: white;
   border: 2px solid orange;
   border-radius: 0.25rem;
