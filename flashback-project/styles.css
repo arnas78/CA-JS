@@ -1,0 +1,57 @@
+body {
+  background: peachpuff;
+  max-width: 1170px;
+  margin: 0 auto;
+}
+
+/* 
+  
+  Containers
+  
+  */
+
+.content-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 
+  
+  Buttons
+  
+*/
+
+.btn {
+  min-width: 60px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin: 0.4rem;
+  border: 2px solid orangered;
+  border-radius: 0.25rem;
+}
+
+.btn-clear {
+  display: block;
+  width: 325px;
+  margin-top: 2rem;
+}
+
+/* 
+  
+  Answer
+  
+  */
+
+.answer {
+  font-size: 2rem;
+  margin-top: 2rem;
+  width: 290px;
+  height: 230px;
+  padding: 2rem 0 2rem 2rem;
+  background: white;
+  border: 2px solid orange;
+  border-radius: 0.25rem;
+  color: rgba(36, 34, 34, 0.888);
+}
