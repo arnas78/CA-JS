@@ -19,23 +19,27 @@
               placeholder="Add a guest!"
             />
 
-            <p class="answer"></p>
+            <div class="answer"></div>
           </div>
           <div class="button-container">
-            <button class="btn btn-add-end">Add to end</button>
-            <button class="btn btn-add-start">Add to start</button>
-            <button class="btn btn-rm-start">Remove first</button>
-            <button class="btn btn-rm-end">Remove last</button>
-            <button class="btn btn-move-first">Move first</button>
-            <button class="btn btn-move-last">Move last</button>
-            <button class="btn btn-reverse">Reverse list</button>
-            <button class="btn btn-rm-from-to">Remove from-to</button>
+            <button class="btn btn-add-end" id="add-end">Add to end</button>
+            <button class="btn btn-add-start" id="add-start">
+              Add to start
+            </button>
+            <button class="btn btn-rm-start" id="rm-start">Remove first</button>
+            <button class="btn btn-rm-end" id="rm-end">Remove last</button>
+            <button class="btn btn-move-first" id="mv-start">Move first</button>
+            <button class="btn btn-move-last" id="mv-end">Move last</button>
+            <button class="btn btn-reverse" id="reverse">Reverse list</button>
+            <button class="btn btn-rm-from-to" id="rm-range">
+              Remove from-to
+            </button>
             <input class="input" id="input-rm-from" placeholder="From index" />
             <input class="input" id="input-rm-to" placeholder="To index" />
-            <button class="btn btn-add-at">Add at</button>
+            <button class="btn btn-add-at" id="add-at">Add at</button>
             <input class="input" id="input-add-at" placeholder="At index" />
 
-            <button class="btn btn-clear">Clear</button>
+            <button class="btn btn-clear" id="clear">Clear</button>
           </div>
         </div>
       </div>

@@ -38,6 +38,9 @@ body {
   min-width: 400px;
 }
 
+.inline {
+  display: inline;
+}
 /* 
   
   Buttons
