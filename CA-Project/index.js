@@ -12,22 +12,7 @@ const mainEl = document.querySelector("main");
 const cartWrapper = document.querySelector(".cart-wrapper");
 const btnCheckout = document.querySelector(".btn-checkout");
 
-const cities = [buttonKaunas, buttonKlaipeda, buttonVilnius];
-let sum = 0;
-
 const movies = [
-  {
-    title: "Filmo pavadinimas",
-    date: ["12:00", "14:00", "17:00"],
-    city: "Vilnius",
-    desc: "Lorem ipsum dolor sit ameus dolores suscipit, beatae quam enim. Accusamus vitae error exercitationem.",
-    genre: "Siaubo, trileris",
-    duration: "2h 20min",
-    cast: "Jonas Jonaitis, Petras Petraitis",
-    price: 8.99,
-    imageUrl:
-      "https://www.59e59.org/media/filer_public_thumbnails/filer_public/6f/7b/6f7b8c01-950b-415c-97ea-3fd51b57d632/memory_exam_thumbnail_sold_out.jpg__360x540_q85_crop_subsampling-2_upscale.jpg",
-  },
   {
     title: "Joker",
     date: ["12:00", "14:00", "17:00", "18:00"],
@@ -37,8 +22,19 @@ const movies = [
     duration: "2h 20min",
     cast: "Joaquin Phoenix",
     price: 6.99,
+    imageUrl: "https://m.media-amazon.com/images/I/71KPOvu-hOL._AC_SL1351_.jpg",
+  },
+  {
+    title: "American Psycho",
+    date: ["18:30", "21:00"],
+    city: "Klaipėda",
+    desc: "A wealthy New York City investment banking executive, Patrick Bateman, hides his psychopathic ego.",
+    genre: "Siaubo, trileris",
+    duration: "2h 20min",
+    cast: "Jonas Jonaitis, Petras Petraitis",
+    price: 8.99,
     imageUrl:
-      "https://www.dramamilk.com/wp-content/uploads/2019/10/Joker-movie-dominates-Korean-box-office-thumbnail.jpg-copy.jpg",
+      "https://m.media-amazon.com/images/M/MV5BZTM2ZGJmNjQtN2UyOS00NjcxLWFjMDktMDE2NzMyNTZlZTBiXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_FMjpg_UX1000_.jpg",
   },
   {
     title: "Fight Club",
@@ -59,21 +55,30 @@ const movies = [
     desc: "In 1980 Miami, a determined Cuban immigrant takes over a drug cartel and succumbs to greed.",
     genre: "Drama, Kriminalinis",
     duration: "2h 02min",
-    cast: "Al Pacino, Michelle Pfeiffer, Steven Bauer",
+    cast: "Al Pacino, Michelle Pfeiffer",
     price: 3.99,
     imageUrl:
       "https://m.media-amazon.com/images/M/MV5BNjdjNGQ4NDEtNTEwYS00MTgxLTliYzQtYzE2ZDRiZjFhZmNlXkEyXkFqcGdeQXVyNjU0OTQ0OTY@._V1_.jpg",
   },
+  // UNCOMMENT THE OBJECT FOR TESTING
+  // {
+  //   title: "Filmo pavadinimas",
+  //   date: ["12:00", "14:00", "17:00"],
+  //   city: "Vilnius",
+  //   desc: "Lorem ipsum dolor sit ameus dolores suscipit, beatae quam enim. Accusamus vitae error exercitationem.",
+  //   genre: "Siaubo, trileris",
+  //   duration: "2h 20min",
+  //   cast: "Jonas Jonaitis, Petras Petraitis",
+  //   price: 8.99,
+  //   imageUrl:
+  //     "https://www.59e59.org/media/filer_public_thumbnails/filer_public/6f/7b/6f7b8c01-950b-415c-97ea-3fd51b57d632/memory_exam_thumbnail_sold_out.jpg__360x540_q85_crop_subsampling-2_upscale.jpg",
+  // },
 ];
 
+const cities = [buttonKaunas, buttonKlaipeda, buttonVilnius];
+let sum = 0;
 let cartMovies = [];
-
 listMovies();
-
-function persistData() {
-  window.localStorage.setItem("cartMovies", JSON.stringify(cartMovies));
-  window.localStorage.setItem("cartPrice", JSON.stringify(sum));
-}
 
 window.addEventListener("DOMContentLoaded", () => {
   const persistedCart = window.localStorage.getItem("cartMovies");
@@ -92,9 +97,9 @@ cartArrowContainer.addEventListener("click", () => {
   cartContainer.classList.remove("visible");
 });
 
-// mainEl.addEventListener("click", () => {
-//   cartContainer.classList.remove("visible");
-// });
+mainEl.addEventListener("click", () => {
+  cartContainer.classList.remove("visible");
+});
 
 cartSummary.addEventListener("click", () => {
   cartContainer.classList.add("visible");
@@ -117,6 +122,19 @@ cities.forEach((button) => {
 });
 
 // FUNCTIONS
+
+function toDouble() {
+  if (sum == 0) {
+    cartSum.textContent = "0.00 €";
+  } else {
+    cartSum.textContent = Math.round(sum * 100) / 100 + " €";
+  }
+}
+
+function persistData() {
+  window.localStorage.setItem("cartMovies", JSON.stringify(cartMovies));
+  window.localStorage.setItem("cartPrice", JSON.stringify(sum));
+}
 
 function renderMovie(city) {
   movies.forEach((singleMovie) => {
@@ -158,6 +176,7 @@ function renderMovie(city) {
 
       countInput.type = "number";
       countInput.value = 1;
+      countInput.min = 1;
       imageEl.src = singleMovie.imageUrl;
 
       movieContainerEl.classList.add("movie-container");
@@ -207,7 +226,6 @@ function renderMovie(city) {
           }
         });
       }
-
       movieInfoEl.append(movieCityEl);
       movieDetailsEl.append(
         movieDescEl,
@@ -228,7 +246,6 @@ function renderMovie(city) {
             chosenTime = timeArr[i].textContent;
           }
         }
-
         if (chosenTime !== "") {
           let price = countInput.value * singleMovie.price;
           sum += price;
@@ -273,20 +290,12 @@ function renderMovie(city) {
   });
 }
 
-function toDouble() {
-  if (sum == 0) {
-    cartSum.textContent = "0.00 €";
-  } else {
-    cartSum.textContent = Math.round(sum * 100) / 100 + " €";
-  }
-}
-
 function renderCart() {
   if (cartMovies.length == 0) {
     cartWrapper.textContent = "";
     const cartItemContainer = document.createElement("div");
-    cartItemContainer.className = "cart-item-empty";
     const cartItemName = document.createElement("h2");
+    cartItemContainer.className = "cart-item-empty";
     cartItemName.textContent = "Jūsų krepšelis yra tuščias!";
     cartItemContainer.append(cartItemName);
     cartWrapper.append(cartItemContainer);
@@ -307,7 +316,10 @@ function renderCart() {
       const cartItemDeleteEl = document.createElement("i");
 
       cartImage.src = cartMovie.imageUrl;
-      cartItemPrice.textContent = cartMovie.price + " €";
+      cartItemPrice.textContent =
+        Math.round(cartMovie.price * cartMovie.amount * 100) / 100 + " €";
+      +" €";
+
       cartItemName.textContent = cartMovie.title;
       cartItemCity.textContent = cartMovie.city;
       cartItemTime.textContent = cartMovie.date;
@@ -316,6 +328,7 @@ function renderCart() {
 
       cartCountInput.type = "number";
       cartCountInput.value = cartMovie.amount;
+      cartCountInput.min = 1;
       cartCountInput.onchange = function () {
         let temp = cartMovie.amount;
         cartMovie.amount = cartCountInput.value;
@@ -325,7 +338,14 @@ function renderCart() {
         } else {
           sum -= price;
         }
-        toDouble();
+
+        if (sum == 0) {
+          cartSum.textContent = "0.00 €";
+        } else {
+          toDouble();
+          cartItemPrice.textContent =
+            Math.round(cartMovie.amount * cartMovie.price * 100) / 100 + " €";
+        }
         persistData();
       };
 
@@ -360,10 +380,6 @@ function renderCart() {
     });
     persistData();
   }
-}
-
-function adjustCount() {
-  console.log("asd");
 }
 
 function listMovies() {

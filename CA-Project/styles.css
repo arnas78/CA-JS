@@ -1,31 +1,114 @@
+/* 
+
+FONTS
+
+*/
+
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+/* 
+
+GLOBAL STYLES
+
+*/
+
 p,
 h3 {
   display: inline;
 }
 h3 {
+  margin-top: 0;
   margin-left: 1rem;
 }
-
+h2 {
+  margin-top: 0.75rem;
+  margin-bottom: 0;
+}
 body {
   background: #d1d1d1;
   margin: 0;
+  font-family: "Roboto", sans-serif;
 }
 img {
   margin-bottom: 1rem;
-  width: 338px;
-  height: 500px;
   -o-object-fit: cover;
   object-fit: cover;
 }
 
-.content-container {
-  padding: 0.5rem 3rem 3rem 3rem;
-  margin: 6rem auto;
-  border-radius: 0.5rem;
-  background: #eceff5;
-  color: #212529;
-  max-width: 1170px;
+nav h2 {
+  display: inline;
+  margin-top: 0;
+  font-size: 1.25rem;
 }
+
+/* 
+
+BUTTONS AND INPUTS
+
+*/
+
+.btn,
+.input {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  border: none;
+  border-radius: 0.5rem;
+  color: #1f2142;
+  text-transform: uppercase;
+  font-size: 1rem;
+  transition: 0.3s;
+  display: inline;
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+
+.btn-time {
+  margin-right: 0.5rem;
+  background: #b8b8b8;
+}
+
+.btn-checkout {
+  transition: 0s;
+  display: block;
+  width: 90%;
+  color: #eceff5;
+  text-align: center;
+  background: #363868;
+  margin: 1.5rem auto;
+}
+
+.btn-cart {
+  margin-top: 1rem;
+}
+
+.btn-active {
+  color: #eceff5;
+  background: #363868;
+}
+.input {
+  margin-left: 0.75rem;
+  width: 50px;
+}
+.input-cart {
+  padding: 0.5rem 0.5rem;
+  max-width: 40px;
+  background: #b8b8b8;
+  border: none;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+.input-cart:focus {
+  outline: none;
+}
+
+/* 
+
+NAVBAR
+
+*/
 
 .navbar {
   background: #eceff5;
@@ -65,19 +148,122 @@ img {
   font-weight: bold;
 }
 
+@media screen and (max-width: 1266px) {
+  .nav-center {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+}
+@media screen and (max-width: 768px) {
+  .nav-center {
+    margin-left: 2rem;
+    margin-right: 2rem;
+  }
+  .link {
+    display: none;
+  }
+  .nav-links {
+    gap: 1rem;
+    padding-left: 0;
+  }
+}
+@media screen and (max-width: 490px) {
+  .cart-text {
+    display: none;
+  }
+}
+
+/* 
+
+INTRO
+
+*/
+
+.content-container {
+  padding: 0.5rem 3rem 3rem 3rem;
+  margin: 8rem auto 3rem auto;
+  border-radius: 0.5rem;
+  background: #eceff5;
+  color: #212529;
+  max-width: 1170px;
+}
+
+.theater-title {
+  font-size: 5rem;
+  margin-bottom: 1.25rem;
+}
+
+.theater-bio {
+  margin-left: 1.25rem;
+  font-size: 2rem;
+}
+
+.underline {
+  background: #363868;
+  width: 5rem;
+  height: 0.25rem;
+  margin: 1rem 1.25rem;
+}
+
+@media screen and (max-width: 768px) {
+  .content-container {
+    margin: 6rem auto 1.5rem auto;
+  }
+  .theater-title {
+    font-size: 3rem;
+  }
+  .theater-bio {
+    font-size: 1.5rem;
+    margin-left: 0;
+  }
+  .underline {
+    margin: 1rem 0;
+  }
+  .intro-movies {
+    margin: 1rem 0;
+  }
+  .intro-movies h1 {
+    font-size: 1.25rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .intro-movies {
+    margin-top: 1rem;
+    padding: 0 1.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+/* 
+
+MOVIES
+
+*/
+
+.movie-list-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  flex: 0 0 33.333333%;
+}
+
 .movie-container {
   padding: 1.25rem;
   border-radius: 0.5rem;
   transition: 0.3s;
 }
-
 .movie-container:hover {
   background: #363868;
   color: #eceff5;
 }
-
 .movie-image {
+  width: 338px;
+  height: 400px;
   position: relative;
+  margin-bottom: 0.25rem;
   border-radius: 0.5rem;
   transition: 0.3s;
   z-index: 4;
@@ -88,19 +274,11 @@ img {
   z-index: 2;
 }
 
-.movie-list-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  flex: 0 0 33.333333%;
+.movie-container:hover .btn-active {
+  background: white;
+  color: #363868;
 }
 
-.underline {
-  background: #363868;
-  width: 100%;
-  height: 0.5rem;
-  margin: 1rem 0;
-}
 .movie-inside {
   width: 306px;
   padding: 1rem;
@@ -109,18 +287,30 @@ img {
   z-index: 3;
 }
 
-.btn,
-.input {
+.movie-title {
   margin: 0.5rem 0;
-  padding: 0.5rem;
-  border: none;
-  border-radius: 0.5rem;
-  color: #1f2142;
-  text-transform: uppercase;
-  font-size: 1rem;
-  transition: 0.3s;
-  display: inline;
 }
+
+.movie-desc {
+  margin-top: 0;
+  margin-bottom: 1.5rem;
+}
+
+.movie-details {
+  margin: 0.5rem 0;
+}
+
+@media screen and (min-width: 1260px) {
+  .movie-list-container {
+    justify-content: start;
+  }
+}
+
+/* 
+
+CART
+
+*/
 
 .cart-summary {
   position: relative;
@@ -137,67 +327,8 @@ img {
   justify-content: space-between;
 }
 
-.input-cart {
-  padding: 0.5rem 0.5rem;
-  max-width: 40px;
-  background: #d1d1d1;
-  border: none;
-  border-radius: 0.5rem;
-  text-transform: uppercase;
-  font-size: 1rem;
-}
-
-.input-cart:focus {
-  outline: none;
-}
-
-.btn:hover {
-  cursor: pointer;
-}
-
-.btn-time {
-  margin-right: 0.5rem;
-  background: #d1d1d1;
-}
-
 .add-to-cart {
   margin-top: 2rem;
-}
-
-.input {
-  margin-left: 0.75rem;
-
-  width: 50px;
-}
-
-.movie-title {
-  margin: 0.5rem 0;
-}
-
-.movie-desc {
-  margin-bottom: 1.5rem;
-}
-
-.movie-details {
-  margin: 0.5rem 0;
-}
-
-.intro-movies {
-  margin-top: 1rem;
-  padding: 0 1.25rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.btn-city {
-  background: #d1d1d1;
-  margin-left: 0.5rem;
-}
-
-.btn-city:hover {
-  background: #363868;
-  color: #eceff5;
 }
 
 .cart-item-details {
@@ -221,16 +352,6 @@ img {
 
 .visible {
   visibility: visible;
-}
-
-.btn-checkout {
-  transition: 0s;
-  display: block;
-  width: 90%;
-  color: #eceff5;
-  text-align: center;
-  background: #363868;
-  margin: 1.5rem auto;
 }
 
 .hidden {
@@ -280,34 +401,142 @@ img {
   display: block;
 }
 
-nav h2 {
-  display: inline;
-  margin-top: 0;
-  font-size: 1.25rem;
-}
-
 .cart-container h2 {
   display: inline;
   margin-top: 0;
   font-size: 1.25rem;
 }
 
-.btn-cart {
-  margin-top: 2rem;
-}
-
 .fa-face-smile,
 .fa-clock,
 .fa-user,
 .fa-euro-sign {
-  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 .fa-masks-theater {
   font-size: 2rem;
 }
 
-.btn-active {
-  color: #eceff5;
+@media screen and (max-width: 400px) {
+  .cart-container {
+    right: -20px;
+  }
+}
+
+/* 
+============
+Contacts
+============
+*/
+
+.contact-title,
+.contact-text {
+  text-transform: uppercase;
+}
+.contact-info {
+  padding-top: 0.5rem;
+}
+.contact-item {
+  margin-bottom: 1.75rem;
+}
+.contact-title {
+  margin-left: 0;
+  color: #363868;
+}
+.contact-form {
+  padding: 1rem 0;
+  background: white;
+  border-radius: 0.5rem;
+  text-align: center;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.1);
+  max-width: 35rem;
+}
+.contact-form:hover {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+.form-control {
+  display: block;
+  border: 0.1rem solid #363868;
+  border-radius: 0.5rem;
+  background-color: #eceff5;
+  font-size: 1rem;
+  text-align: left;
+  font-weight: 700;
+  color: #363868;
+  padding: 0.25rem 0.5rem;
+  margin: 0.5rem 1.25rem;
+  width: 90%;
+}
+.submit-btn {
+  padding: 1rem 0;
+  margin: 1rem 1.25rem;
+  border-bottom-left-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
+  width: 92%;
+}
+@media screen and (min-width: 992px) {
+  .contact-form,
+  .contact-info {
+    width: 45%;
+  }
+}
+@media screen and (max-width: 992px) {
+  .contact-form,
+  .contact-info {
+    margin: 2rem auto;
+  }
+  .form-control {
+    max-width: 83%;
+  }
+  .submit-btn {
+    width: 88%;
+  }
+}
+
+/* 
+
+FOOTER
+
+*/
+
+footer {
+  padding: 3rem;
+  margin: 1rem auto 0 auto;
+
   background: #363868;
+  color: #eceff5;
+}
+
+.footer-desc {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 3rem;
+}
+.location-container {
+  padding-left: 1rem;
+}
+.location-container li {
+  margin: 1rem;
+  margin-left: 0;
+  list-style: none;
+}
+.fa-location-dot {
+  margin-right: 1rem;
+}
+
+@media screen and (min-width: 992px) {
+  .footer-container {
+    max-width: 1170px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .footer-container {
+    text-align: center;
+  }
 }

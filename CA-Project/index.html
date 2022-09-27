@@ -13,8 +13,8 @@
     <title>Document</title>
   </head>
   <body>
-    <header>
-      <nav class="navbar navbar-hidden" id="nav">
+    <header id="nav">
+      <nav class="navbar navbar-hidden">
         <div class="nav-center">
           <div class="nav-header">
             <i class="fa-solid fa-masks-theater"></i>
@@ -23,10 +23,10 @@
 
           <ul class="nav-links" id="nav-links">
             <li>
-              <a href="#">Seansai</a>
+              <a href="#nav" class="link">Apie mus</a>
             </li>
             <li>
-              <a href="#">Apie mus</a>
+              <a href="#movies" class="link">Seansai</a>
             </li>
 
             <li>
@@ -41,85 +41,7 @@
                   <div class="cart-arrow-container">
                     <i class="fa-solid fa-chevron-up"></i>
                   </div>
-                  <div class="cart-wrapper">
-                    <!-- <div class="cart-item">
-                      <img
-                        class="cart-image"
-                        src="https://www.59e59.org/media/filer_public_thumbnails/filer_public/6f/7b/6f7b8c01-950b-415c-97ea-3fd51b57d632/memory_exam_thumbnail_sold_out.jpg__360x540_q85_crop_subsampling-2_upscale.jpg"
-                        alt=""
-                      />
-
-                      <div class="cart-item-details">
-                        <h2>Item name</h2>
-                        <p>Miestas</p>
-                        <p>Laikas</p>
-                        <div class="cart-amount">
-                          <p>Kiekis:</p>
-                          <input
-                            class="input-cart"
-                            type="number"
-                            id="input-a"
-                            name="quantity"
-                          />
-                        </div>
-                      </div>
-
-                      <i class="fa-solid fa-x"></i>
-                    </div> -->
-
-                    <!--<div class="cart-item">
-                      <div>
-                        <img
-                          class="cart-image"
-                          src="https://www.59e59.org/media/filer_public_thumbnails/filer_public/6f/7b/6f7b8c01-950b-415c-97ea-3fd51b57d632/memory_exam_thumbnail_sold_out.jpg__360x540_q85_crop_subsampling-2_upscale.jpg"
-                          alt=""
-                        />
-                      </div>
-                      <div>
-                        <h2>Item name</h2>
-                        <p>Miestas</p>
-                        <p>Laikas</p>
-                        <div class="cart-amount">
-                          <p>Kiekis:</p>
-                          <input
-                            class="input-cart"
-                            type="number"
-                            id="input-a"
-                            name="quantity"
-                          />
-                        </div>
-                      </div>
-                      <div>
-                        <i class="fa-solid fa-x"></i>
-                      </div>
-                    </div>
-                    <div class="cart-item">
-                      <div>
-                        <img
-                          class="cart-image"
-                          src="https://www.59e59.org/media/filer_public_thumbnails/filer_public/6f/7b/6f7b8c01-950b-415c-97ea-3fd51b57d632/memory_exam_thumbnail_sold_out.jpg__360x540_q85_crop_subsampling-2_upscale.jpg"
-                          alt=""
-                        />
-                      </div>
-                      <div>
-                        <h2>Item name</h2>
-                        <p>Miestas</p>
-                        <p>Laikas</p>
-                        <div class="cart-amount">
-                          <p>Kiekis:</p>
-                          <input
-                            class="input-cart"
-                            type="number"
-                            id="input-a"
-                            name="quantity"
-                          />
-                        </div>
-                      </div>
-                      <div>
-                        <i class="fa-solid fa-x"></i>
-                      </div>
-                    </div> -->
-                  </div>
+                  <div class="cart-wrapper"></div>
                   <button class="btn hidden btn-checkout">Apmokėjimas</button>
                 </div>
               </div>
@@ -130,8 +52,16 @@
     </header>
     <main>
       <div class="content-container">
-        <div class="intro-theater"></div>
-
+        <div class="intro-theater">
+          <div>
+            <h1 class="theater-title">Kino teatras CodeAcademy</h1>
+            <h2 class="theater-bio" id="movies">
+              Geriausi visų laikų filmai jūsų malonumui!
+            </h2>
+          </div>
+          <div class="underline"></div>
+          <div></div>
+        </div>
         <div class="intro-movies">
           <div>
             <h1>Dabar rodome:</h1>
@@ -143,68 +73,58 @@
           </div>
         </div>
 
-        <div class="movie-list-container">
-          <!-- <div class="movie-container">
-          <div class="movie-inside">
-            <h2 class="movie-desc">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
-              reprehenderit repellendus dolores suscipit, beatae quam enim.
-              Accusamus vitae error exercitationem.
-            </h2>
-
-            <div class="movie-details">
-              <i class="fa-regular fa-face-smile"></i>
-              <h3 class="movie-genre">Siaubo, trileris</h3>
-            </div>
-
-            <div class="movie-details">
-              <i class="fa-regular fa-clock"></i>
-              <h3 class="movie-genre">2h 20min</h3>
-            </div>
-
-            <div class="movie-details">
-              <i class="fa-regular fa-user"></i>
-              <h3 class="movie-genre">
-                Jonas Jonaitis, Petras Petraitis ir kiti
-              </h3>
-            </div>
-            <div class="movie-details">
-              <i class="fa-solid fa-euro-sign"></i>
-              <h3 class="movie-genre">5.99</h3>
-            </div>
-
-            <div class="add-to-cart">
-              <button class="btn btn-cart">
-                <i class="fa-solid fa-cart-shopping"></i>
-                <p>Į krepšelį</p>
-              </button>
-              <input
-                class="input"
-                type="number"
-                id="input-a"
-                name="quantity"
-                placeholder="1"
-              />
-            </div>
-          </div>
-          <div>
-            <img
-              class="movie-image"
-              src="https://www.59e59.org/media/filer_public_thumbnails/filer_public/6f/7b/6f7b8c01-950b-415c-97ea-3fd51b57d632/memory_exam_thumbnail_sold_out.jpg__360x540_q85_crop_subsampling-2_upscale.jpg"
-              alt=""
-            />
-          </div>
-          <div class="movie-info">
-            <h1>Filmo pavadinimas</h1>
-            <button class="btn btn-time"><p>17:25</p></button>
-            <button class="btn btn-time"><p>20:25</p></button>
-            <button class="btn btn-time"><p>22:00</p></button>
-            <h3>Klaipėda</h3>
-          </div>
-        </div> -->
-        </div>
+        <div class="movie-list-container"></div>
       </div>
     </main>
+    <footer>
+      <h1 class="footer-desc">Arnas Klimašauskas, CodeAcademy project, 2022</h1>
+      <div class="footer-container">
+        <div>
+          <h2>Mūsų kino teatrus galite rasti:</h2>
+          <ul class="location-container">
+            <li>
+              <i class="fa-solid fa-location-dot"></i>Vilniaus g. 89, Vilnius
+            </li>
+            <li><i class="fa-solid fa-location-dot"></i>Kauno g. 67, Kaunas</li>
+            <li>
+              <i class="fa-solid fa-location-dot"></i>Klaipėdos g. 48, Klaipėda
+            </li>
+          </ul>
+        </div>
+        <div class="contact-form">
+          <h3 class="contact-title">Susisiekite su mumis</h3>
+          <form>
+            <div class="form-group">
+              <!-- inputs -->
+              <input
+                type="text"
+                placeholder="Jūsų vardas"
+                class="form-control"
+                name="firstName"
+              />
+
+              <input
+                type="email"
+                placeholder="Jūsų el. paštas"
+                class="form-control"
+                name="email"
+              />
+
+              <textarea
+                name="message"
+                placeholder="Jūsų žinutė"
+                class="form-control"
+                rows="5"
+              ></textarea>
+            </div>
+            <!-- button -->
+            <button type="submit" class="submit-btn btn">
+              Pateikti laišką
+            </button>
+          </form>
+        </div>
+      </div>
+    </footer>
     <script src="./index.js"></script>
   </body>
 </html>
