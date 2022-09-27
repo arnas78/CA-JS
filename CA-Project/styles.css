@@ -18,7 +18,7 @@ img {
   object-fit: cover;
 }
 
-main {
+.content-container {
   padding: 0.5rem 3rem 3rem 3rem;
   margin: 6rem auto;
   border-radius: 0.5rem;
@@ -122,6 +122,35 @@ main {
   display: inline;
 }
 
+.cart-summary {
+  position: relative;
+  text-align: right;
+}
+
+.cart-summary:hover {
+  cursor: pointer;
+}
+
+.cart-amount {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.input-cart {
+  padding: 0.5rem 0.5rem;
+  max-width: 40px;
+  background: #d1d1d1;
+  border: none;
+  border-radius: 0.5rem;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+
+.input-cart:focus {
+  outline: none;
+}
+
 .btn:hover {
   cursor: pointer;
 }
@@ -171,8 +200,95 @@ main {
   color: #eceff5;
 }
 
+.cart-item-details {
+  min-width: 7rem;
+  text-align: left;
+}
+
+.cart-container {
+  z-index: 10;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  visibility: hidden;
+  background: #eceff5;
+  max-width: 380px;
+  border-radius: 0.5rem;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+}
+
+.visible {
+  visibility: visible;
+}
+
+.btn-checkout {
+  transition: 0s;
+  display: block;
+  width: 90%;
+  color: #eceff5;
+  text-align: center;
+  background: #363868;
+  margin: 1.5rem auto;
+}
+
+.hidden {
+  margin: 0;
+  visibility: hidden;
+}
+
+.cart-image {
+  border-radius: 0.5rem;
+  max-width: 130px;
+  max-height: 170px;
+}
+
+.cart-item {
+  margin: 0rem 2rem 1rem 1rem;
+  display: grid;
+  grid-template-columns: 4fr 4fr 0.5fr;
+  gap: 2rem;
+}
+
+.cart-item-empty {
+  margin: 2rem 1rem;
+  text-align: center;
+}
+
+.cart-item-desc {
+  display: flex;
+
+  justify-content: space-between;
+}
+
+.cart-arrow-container {
+  text-align: center;
+  margin: 1rem 0;
+}
+
+.cart-arrow-container:hover {
+  scale: 1.25;
+}
+
+.cart-wrapper {
+  overflow-y: auto;
+  max-height: 350px;
+}
+
+.cart-wrapper p {
+  display: block;
+}
+
+nav h2 {
+  display: inline;
+  margin-top: 0;
+  font-size: 1.25rem;
+}
+
 .cart-container h2 {
   display: inline;
+  margin-top: 0;
   font-size: 1.25rem;
 }
 
@@ -189,4 +305,9 @@ main {
 
 .fa-masks-theater {
   font-size: 2rem;
+}
+
+.btn-active {
+  color: #eceff5;
+  background: #363868;
 }

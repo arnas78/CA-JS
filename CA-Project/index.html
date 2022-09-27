@@ -16,7 +16,6 @@
     <header>
       <nav class="navbar navbar-hidden" id="nav">
         <div class="nav-center">
-          <!-- nav header -->
           <div class="nav-header">
             <i class="fa-solid fa-masks-theater"></i>
             <h2>Kino teatras</h2>
@@ -31,10 +30,98 @@
             </li>
 
             <li>
-              <div class="cart-container">
-                <i class="fa-solid fa-cart-shopping"></i>
-                <h2>Jūsų krepšelis:</h2>
-                <h2>0.00 $</h2>
+              <div class="cart-summary">
+                <div class="cart-summ">
+                  <i class="fa-solid fa-cart-shopping"></i>
+                  <h2 class="cart-text">Jūsų krepšelis:</h2>
+                  <h2 class="cart-sum">0.00 €</h2>
+                </div>
+
+                <div class="cart-container">
+                  <div class="cart-arrow-container">
+                    <i class="fa-solid fa-chevron-up"></i>
+                  </div>
+                  <div class="cart-wrapper">
+                    <!-- <div class="cart-item">
+                      <img
+                        class="cart-image"
+                        src="https://www.59e59.org/media/filer_public_thumbnails/filer_public/6f/7b/6f7b8c01-950b-415c-97ea-3fd51b57d632/memory_exam_thumbnail_sold_out.jpg__360x540_q85_crop_subsampling-2_upscale.jpg"
+                        alt=""
+                      />
+
+                      <div class="cart-item-details">
+                        <h2>Item name</h2>
+                        <p>Miestas</p>
+                        <p>Laikas</p>
+                        <div class="cart-amount">
+                          <p>Kiekis:</p>
+                          <input
+                            class="input-cart"
+                            type="number"
+                            id="input-a"
+                            name="quantity"
+                          />
+                        </div>
+                      </div>
+
+                      <i class="fa-solid fa-x"></i>
+                    </div> -->
+
+                    <!--<div class="cart-item">
+                      <div>
+                        <img
+                          class="cart-image"
+                          src="https://www.59e59.org/media/filer_public_thumbnails/filer_public/6f/7b/6f7b8c01-950b-415c-97ea-3fd51b57d632/memory_exam_thumbnail_sold_out.jpg__360x540_q85_crop_subsampling-2_upscale.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div>
+                        <h2>Item name</h2>
+                        <p>Miestas</p>
+                        <p>Laikas</p>
+                        <div class="cart-amount">
+                          <p>Kiekis:</p>
+                          <input
+                            class="input-cart"
+                            type="number"
+                            id="input-a"
+                            name="quantity"
+                          />
+                        </div>
+                      </div>
+                      <div>
+                        <i class="fa-solid fa-x"></i>
+                      </div>
+                    </div>
+                    <div class="cart-item">
+                      <div>
+                        <img
+                          class="cart-image"
+                          src="https://www.59e59.org/media/filer_public_thumbnails/filer_public/6f/7b/6f7b8c01-950b-415c-97ea-3fd51b57d632/memory_exam_thumbnail_sold_out.jpg__360x540_q85_crop_subsampling-2_upscale.jpg"
+                          alt=""
+                        />
+                      </div>
+                      <div>
+                        <h2>Item name</h2>
+                        <p>Miestas</p>
+                        <p>Laikas</p>
+                        <div class="cart-amount">
+                          <p>Kiekis:</p>
+                          <input
+                            class="input-cart"
+                            type="number"
+                            id="input-a"
+                            name="quantity"
+                          />
+                        </div>
+                      </div>
+                      <div>
+                        <i class="fa-solid fa-x"></i>
+                      </div>
+                    </div> -->
+                  </div>
+                  <button class="btn hidden btn-checkout">Apmokėjimas</button>
+                </div>
               </div>
             </li>
           </ul>
@@ -42,21 +129,22 @@
       </nav>
     </header>
     <main>
-      <div class="intro-theater"></div>
+      <div class="content-container">
+        <div class="intro-theater"></div>
 
-      <div class="intro-movies">
-        <div>
-          <h1>Dabar rodome:</h1>
+        <div class="intro-movies">
+          <div>
+            <h1>Dabar rodome:</h1>
+          </div>
+          <div>
+            <button class="btn" id="btn-vilnius">Vilnius</button>
+            <button class="btn" id="btn-kaunas">Kaunas</button>
+            <button class="btn" id="btn-klaipeda">Klaipėda</button>
+          </div>
         </div>
-        <div>
-          <button class="btn btn-city">Vilnius</button>
-          <button class="btn btn-city">Kaunas</button>
-          <button class="btn btn-city">Klaipėda</button>
-        </div>
-      </div>
 
-      <div class="movie-list-container">
-        <!-- <div class="movie-container">
+        <div class="movie-list-container">
+          <!-- <div class="movie-container">
           <div class="movie-inside">
             <h2 class="movie-desc">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae
@@ -114,6 +202,7 @@
             <h3>Klaipėda</h3>
           </div>
         </div> -->
+        </div>
       </div>
     </main>
     <script src="./index.js"></script>
